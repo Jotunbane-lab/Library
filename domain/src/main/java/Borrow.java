@@ -1,8 +1,13 @@
+import javax.persistence.*;
 import java.time.LocalDate;
-
+@Entity
 public class Borrow {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_borrow;
-    private int book_id;
-    private int borrrower_id;
+    @ManyToOne
+    private Book book;
+    @ManyToOne
+    private Borrower borrower;
     private LocalDate date;
 }

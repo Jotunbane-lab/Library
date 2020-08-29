@@ -2,14 +2,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-
 @Entity
-public class Author {
+public class BorrowerDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_author;
-    private String first_name;
-    private String last_name;
-    private String birth_place;
+    private int id_borrower_details;
+    private String address;
+    private String email;
+    private String phone;
 }

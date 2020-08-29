@@ -1,6 +1,9 @@
+import javax.persistence.*;
 import java.time.LocalDate;
-
+@Entity
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_book;
     private boolean borrow;
     private String category;
@@ -9,5 +12,7 @@ public class Book {
     private LocalDate relase_date;
     private String summary;
     private String title;
-    private int author_id;
+
+    @ManyToOne
+    private Author author;
 }

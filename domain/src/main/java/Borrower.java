@@ -1,6 +1,12 @@
+import javax.persistence.*;
+
+@Entity
 public class Borrower {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_borrower;
     private String first_name;
     private String last_name;
-    private  int borrower_details_id;
+    @OneToOne
+    private BorrowerDetails borrowerDetails;
 }
